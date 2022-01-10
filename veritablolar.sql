@@ -1,14 +1,14 @@
 Insert Into Admin(AdminTc,Sifre) values ('12946095804','123456');
-Insert Into Yayýnevi(YayýneviAdi) values('k');
+Insert Into YayÃ½nevi(YayÃ½neviAdi) values('k');
 Drop Table Uyeler;
 Delete From Uyeler;
 Drop table kitaplar;
 
 Insert Into Admin(AdminTc,Sifre) values ('1','1');
-Insert Into Oduncalma(kitapýd,odunctarihi,ýadetarihi) values(22,'19-NOV-2021',NULL);
-Insert Into Yayýnevi(YayýneviAdi) values('Beyaz');
+Insert Into Oduncalma(kitapÃ½d,odunctarihi,Ã½adetarihi) values(22,'19-NOV-2021',NULL);
+Insert Into YayÃ½nevi(YayÃ½neviAdi) values('Beyaz');
 Insert Into Yazar(YazarAdi) values('Peyami Safa');
-Insert Into Kitaplar(KitapAdý,YazarId,YayýneviId,SayfaNumarasý) values('Kuyucaklý Yusuf','1','2',235);
+Insert Into Kitaplar(KitapAdÃ½,YazarId,YayÃ½neviId,SayfaNumarasÃ½) values('KuyucaklÃ½ Yusuf','1','2',235);
 Insert Into Uyeler(UyeTc,UyeAd,UyeSoyad,UyeCinsiyet,UyeTel,UyeSifre) values('1','Eren','Karaymir','Male','2222','1');
 
 Update ODUNCALMA Set IADETARIHI = odunctarihi + 15 where ISLEMID = 42;
@@ -35,21 +35,21 @@ YazarAdi varchar(20),
 CONSTRAINT PK_yazar PRIMARY KEY(YazarId)
 );
 
-Create Table Yayýnevi(
-YayýneviId number generated always as IDENTITY,
-YayýneviAdi varchar(20),
-CONSTRAINT PK_yayýnevi PRIMARY KEY(YayýneviId)
+Create Table YayÃ½nevi(
+YayÃ½neviId number generated always as IDENTITY,
+YayÃ½neviAdi varchar(20),
+CONSTRAINT PK_yayÃ½nevi PRIMARY KEY(YayÃ½neviId)
 );
 
 Create Table Kitaplar(
 KitapId number generated always as IDENTITY,
-KitapAdý varchar(20),
+KitapAdÃ½ varchar(20),
 YazarId number(4),
-YayýneviId number(4),
-SayfaNumarasý Decimal(10),
+YayÃ½neviId number(4),
+SayfaNumarasÃ½ Decimal(10),
 CONSTRAINT PK_kitap PRIMARY KEY(KitapId),
 CONSTRAINT fk_YazarId FOREIGN KEY (YazarId) REFERENCES Yazar(YazarId),
-CONSTRAINT fk_YayýneviId FOREIGN KEY (YAYINEVIID) REFERENCES YAYINEVI(YAYINEVIID));
+CONSTRAINT fk_YayÃ½neviId FOREIGN KEY (YAYINEVIID) REFERENCES YAYINEVI(YAYINEVIID));
 
 Create Table OduncAlma(
 IslemId number generated always as IDENTITY,
@@ -61,17 +61,3 @@ CONSTRAINT PK_islem PRIMARY KEY(IslemId),
 CONSTRAINT fk_UyeId FOREIGN KEY (UyeId) REFERENCES Uyeler(UyeId),
 CONSTRAINT fk_KitapId FOREIGN KEY (KitapId) REFERENCES Kitaplar(KitapId)
 );
-
-Alter Table Kitaplar(
-KitapId number generated always as IDENTITY,
-KitapAdý varchar(20),
-YazarId number(4),
-YayýneviId number(4),
-SayfaNumarasý Decimal(10),
-CONSTRAINT PK_kitap PRIMARY KEY(KitapId),
-CONSTRAINT fk_YazarId FOREIGN KEY (YazarId) REFERENCES Yazar(YazarId) ON DELETE CASCADE,
-CONSTRAINT fk_YayýneviId FOREIGN KEY (YAYINEVIID) REFERENCES YAYINEVI(YAYINEVIID));
-
-Insert Into OduncAlma(UyeId,KitapId,OduncTarihi,IadeTarihi) Values (1,22,'2021-01-02','2021-02-02');
-Drop Table KitapIslemleri;
-SELECT k.kitapId,k.kitapAdi,yay.YAYINEVIADI,yaz.YazarAdi,k.SayfaNumarasý FROM Kitaplar k,YAYINEVI yay,Yazar yaz where k.yazarId = yaz.yazarId and yay.YAYINEVIID = yay.YAYINEVIID;
