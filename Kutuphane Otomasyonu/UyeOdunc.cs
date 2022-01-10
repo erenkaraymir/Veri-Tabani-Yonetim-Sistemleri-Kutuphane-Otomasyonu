@@ -45,20 +45,7 @@ namespace Kutuphane_Otomasyonu
                 dataGridView1.Columns[3].HeaderText = "Yayınevi Adı";
                 dataGridView1.Columns[4].HeaderText = "Sayfa Sayısı";
 
-            //DbCon dbcon2 = new DbCon();
-            //con2 = dbcon2.connection();
-            //DataTable dataTable2 = new DataTable();
-            //OracleDataAdapter oracleDataAdapter2 = new OracleDataAdapter("SELECT o.ISLEMID,u.UyeTc,k.KitapAdi,o.OduncTarihi,o.IadeTarihi FROM ODUNCALMA o,Uyeler u,Kitaplar k where u.uyeId = o.uyeId and  k.kitapId = o.kitapId", con);
-            //oracleDataAdapter2.Fill(dataTable2);
-            //dataGridView2.DataSource = dataTable2;
-            ////kolon isimlerini değiştirme
-            //dataGridView2.Columns[0].HeaderText = "ISLEM ID";
-            //dataGridView2.Columns[1].HeaderText = "UYE TC";
-            //dataGridView2.Columns[2].HeaderText = "Kitap Adı";
-            //dataGridView2.Columns[3].HeaderText = "Ödünç Tarihi";
-            //dataGridView2.Columns[4].HeaderText = "İade Tarihi";
-
-
+         
 
             UyeCagir();
             if (dr.Read())
