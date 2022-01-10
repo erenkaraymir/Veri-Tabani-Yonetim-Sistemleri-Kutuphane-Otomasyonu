@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{930E5B84-E1CD-481B-A6B8-8287DA63A727}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Kutuphane_Otomasyonu</RootNamespace>
+    <AssemblyName>Kutuphane Otomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.18.15.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.18.15.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.VsDevTools.EntityFramework.15.0, Version=6.122.19.31, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.Web, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.Web.18.3.0\lib\net40\Oracle.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUyeKaydi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUyeKaydi.Designer.cs">
+      <DependentUpon>AdminUyeKaydi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaSayfa.Designer.cs">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbCon.cs" />
+    <Compile Include="OduncTablosuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OduncTablosuAdmin.Designer.cs">
+      <DependentUpon>OduncTablosuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KayitOl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KayitOl.Designer.cs">
+      <DependentUpon>KayitOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitapAra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapAra.Designer.cs">
+      <DependentUpon>KitapAra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitapEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapEkle.Designer.cs">
+      <DependentUpon>KitapEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitapGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapGuncelle.Designer.cs">
+      <DependentUpon>KitapGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitapSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapSil.Designer.cs">
+      <DependentUpon>KitapSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuUye.Designer.cs">
+      <DependentUpon>MenuUye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profilim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profilim.Designer.cs">
+      <DependentUpon>Profilim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UyeGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeGuncelle.Designer.cs">
+      <DependentUpon>UyeGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeKitapAra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeKitapAra.Designer.cs">
+      <DependentUpon>UyeKitapAra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeKitapBagis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeKitapBagis.Designer.cs">
+      <DependentUpon>UyeKitapBagis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeKitapIade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeKitapIade.Designer.cs">
+      <DependentUpon>UyeKitapIade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeLogin.Designer.cs">
+      <DependentUpon>UyeLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeOdunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeOdunc.Designer.cs">
+      <DependentUpon>UyeOdunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeSil.Designer.cs">
+      <DependentUpon>UyeSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YayıneviIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YayıneviIslemleri.Designer.cs">
+      <DependentUpon>YayıneviIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazarIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazarIslemleri.Designer.cs">
+      <DependentUpon>YazarIslemleri.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUyeKaydi.resx">
+      <DependentUpon>AdminUyeKaydi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnaSayfa.resx">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OduncTablosuAdmin.resx">
+      <DependentUpon>OduncTablosuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KayitOl.resx">
+      <DependentUpon>KayitOl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapAra.resx">
+      <DependentUpon>KitapAra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapEkle.resx">
+      <DependentUpon>KitapEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapGuncelle.resx">
+      <DependentUpon>KitapGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapSil.resx">
+      <DependentUpon>KitapSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuUye.resx">
+      <DependentUpon>MenuUye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profilim.resx">
+      <DependentUpon>Profilim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UyeGuncelle.resx">
+      <DependentUpon>UyeGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeKitapAra.resx">
+      <DependentUpon>UyeKitapAra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeKitapBagis.resx">
+      <DependentUpon>UyeKitapBagis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeKitapIade.resx">
+      <DependentUpon>UyeKitapIade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeLogin.resx">
+      <DependentUpon>UyeLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeOdunc.resx">
+      <DependentUpon>UyeOdunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeSil.resx">
+      <DependentUpon>UyeSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YayıneviIslemleri.resx">
+      <DependentUpon>YayıneviIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazarIslemleri.resx">
+      <DependentUpon>YazarIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
